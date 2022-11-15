@@ -2,79 +2,79 @@ import * as React from "react";
 import "@/css/Home.less"
 
 type TabItem = {
-    name:string,
-    index:string,
-    href:string,
+    name: string,
+    index: string,
+    href: string,
 }
 
 type LeftLi = {
-    tab:number,
-    tabs:Array<TabItem>
+    tab: number,
+    tabs: Array<TabItem>
 }
 
 type StateType = {
-    leftLi:LeftLi,
-    imgList:Array<string>
+    leftLi: LeftLi,
+    imgList: Array<string>
 };
 
-class Home extends React.Component<any,StateType>{
-    constructor(props:any){
+class Home extends React.Component<any, StateType> {
+    constructor(props: any) {
         super(props);
 
-        const tabs1 =[
+        const tabs1 = [
             {
-                name:"技术社区",
-                elem:[
-                    {name:"CSDN",index:"0",href:"https://www.csdn.net/"},
-                    {name:"简书",index:"1",href:"https://www.jianshu.com/"},
-                    {name:"SegmentFault",index:"2",href:"https://segmentfault.com/"}
+                name: "技术社区",
+                elem: [
+                    {name: "CSDN", index: "0", href: "https://www.csdn.net/"},
+                    {name: "简书", index: "1", href: "https://www.jianshu.com/"},
+                    {name: "SegmentFault", index: "2", href: "https://segmentfault.com/"}
                 ],
-                index:"0"
-            },{
-                name:"技术分类",
-                elem:[
-                    {name:"CSDN",index:"0",href:"https://www.csdn.net/"},
-                    {name:"简书",index:"1",href:"https://www.jianshu.com/"},
-                    {name:"SegmentFault",index:"2",href:"https://segmentfault.com/"}
+                index: "0"
+            }, {
+                name: "技术分类",
+                elem: [
+                    {name: "CSDN", index: "0", href: "https://www.csdn.net/"},
+                    {name: "简书", index: "1", href: "https://www.jianshu.com/"},
+                    {name: "SegmentFault", index: "2", href: "https://segmentfault.com/"}
                 ],
-                index:"1"
-            },{
-                name:"技术网站",
-                elem:[
-                    {name:"CSDN",index:"0",href:"https://www.csdn.net/"},
-                    {name:"简书",index:"1",href:"https://www.jianshu.com/"},
-                    {name:"SegmentFault",index:"2",href:"https://segmentfault.com/"}
+                index: "1"
+            }, {
+                name: "技术网站",
+                elem: [
+                    {name: "CSDN", index: "0", href: "https://www.csdn.net/"},
+                    {name: "简书", index: "1", href: "https://www.jianshu.com/"},
+                    {name: "SegmentFault", index: "2", href: "https://segmentfault.com/"}
                 ],
-                index:"2"
+                index: "2"
             }
         ]
-        const tabs =[
-            {name:"CSDN",index:"0",href:"https://www.csdn.net/"},
-            {name:"简书",index:"1",href:"https://www.jianshu.com/"},
-            {name:"SegmentFault",index:"2",href:"https://segmentfault.com/"},
-            {name:"CSDN",index:"0",href:"https://www.csdn.net/"},
-            {name:"简书",index:"1",href:"https://www.jianshu.com/"},
-            {name:"SegmentFault",index:"2",href:"https://segmentfault.com/"},
-            {name:"CSDN",index:"0",href:"https://www.csdn.net/"},
-            {name:"简书",index:"1",href:"https://www.jianshu.com/"},
-            {name:"SegmentFault",index:"2",href:"https://segmentfault.com/"},
-            {name:"CSDN",index:"0",href:"https://www.csdn.net/"},
-            {name:"简书",index:"1",href:"https://www.jianshu.com/"},
-            {name:"SegmentFault",index:"2",href:"https://segmentfault.com/"},
-            {name:"CSDN",index:"0",href:"https://www.csdn.net/"},
-            {name:"简书",index:"1",href:"https://www.jianshu.com/"},
-            {name:"SegmentFault",index:"2",href:"https://segmentfault.com/"},
-            {name:"CSDN",index:"0",href:"https://www.csdn.net/"},
-            {name:"简书",index:"1",href:"https://www.jianshu.com/"},
-            {name:"SegmentFault",index:"2",href:"https://segmentfault.com/"}
+        const tabs = [
+            {name: "CSDN", index: "0", href: "https://www.csdn.net/"},
+            {name: "简书", index: "1", href: "https://www.jianshu.com/"},
+            {name: "SegmentFault", index: "2", href: "https://segmentfault.com/"},
+            {name: "CSDN", index: "0", href: "https://www.csdn.net/"},
+            {name: "简书", index: "1", href: "https://www.jianshu.com/"},
+            {name: "SegmentFault", index: "2", href: "https://segmentfault.com/"},
+            {name: "CSDN", index: "0", href: "https://www.csdn.net/"},
+            {name: "简书", index: "1", href: "https://www.jianshu.com/"},
+            {name: "SegmentFault", index: "2", href: "https://segmentfault.com/"},
+            {name: "CSDN", index: "0", href: "https://www.csdn.net/"},
+            {name: "简书", index: "1", href: "https://www.jianshu.com/"},
+            {name: "SegmentFault", index: "2", href: "https://segmentfault.com/"},
+            {name: "CSDN", index: "0", href: "https://www.csdn.net/"},
+            {name: "简书", index: "1", href: "https://www.jianshu.com/"},
+            {name: "SegmentFault", index: "2", href: "https://segmentfault.com/"},
+            {name: "CSDN", index: "0", href: "https://www.csdn.net/"},
+            {name: "简书", index: "1", href: "https://www.jianshu.com/"},
+            {name: "SegmentFault", index: "2", href: "https://segmentfault.com/"}
         ]
 
-        this.state={
-            leftLi:{
-                tab:0,
+        this.state = {
+            leftLi: {
+                tab: 0,
                 tabs
             },
-            imgList:[
+            imgList: [
                 require("../images/1.jpg"),
                 require("../images/2.jpg"),
                 require("../images/3.jpg"),
@@ -83,29 +83,32 @@ class Home extends React.Component<any,StateType>{
             ]
         }
     }
-    changeLis=(idx:number)=>{
+
+    changeLis = (idx: number) => {
         this.setState({
-            leftLi: Object.assign({}, this.state.leftLi, { tab: idx })
+            leftLi: Object.assign({}, this.state.leftLi, {tab: idx})
         });
     }
 
-    renderLi(tabs:Array<TabItem>,tab:number,changeLis:Function){
+    renderLi(tabs: Array<TabItem>, tab: number, changeLis: Function) {
         return tabs.map((item, idx) => {
-            return(
-                <li key={item.index} className={ tab === idx ? 'leftLi active' : 'leftLi' } onClick={()=>{changeLis(idx)}}>
+            return (
+                <li key={item.index} className={tab === idx ? 'leftLi active' : 'leftLi'} onClick={() => {
+                    changeLis(idx)
+                }}>
                     <span>{item.name}</span>
                 </li>)
         })
     }
 
     render() {
-        const {tabs,tab} = this.state.leftLi;
+        const {tabs, tab} = this.state.leftLi;
         const imgList = this.state.imgList;
-        return(
+        return (
             <div className="main-home">
                 <div className="home-mid">
                     <ul className="home-left">
-                        {this.renderLi(tabs,tab,this.changeLis)}
+                        {this.renderLi(tabs, tab, this.changeLis)}
                     </ul>
                     <ul className="home-ul">
                         <li className="exchange">
@@ -150,4 +153,5 @@ class Home extends React.Component<any,StateType>{
         )
     }
 }
+
 export default Home

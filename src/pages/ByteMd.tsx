@@ -1,6 +1,6 @@
 import 'bytemd/dist/index.css'
 // 编辑 / 视图
-import { Editor, Viewer } from '@bytemd/react';
+import {Editor, Viewer} from '@bytemd/react';
 import gfm from '@bytemd/plugin-gfm';
 import highlight from '@bytemd/plugin-highlight-ssr';
 import mediumZoom from "@bytemd/plugin-medium-zoom";
@@ -21,39 +21,39 @@ import {axiosRequest} from "@/service";
 const plugins = [gfm(), gemoji(), highlight(), mediumZoom()]
 
 type StateType = {
-    value:string
+    value: string
 }
 
-class ByteMd extends React.Component<any,StateType>{
-    constructor(props:any) {
+class ByteMd extends React.Component<any, StateType> {
+    constructor(props: any) {
         super(props);
         this.state = {
-            value:''
+            value: ''
         }
     }
 
-    uploadImg(file:File[]):Promise<any>{
+    uploadImg(file: File[]): Promise<any> {
         return new Promise((resolve, reject) => {
             const formData = new FormData();
-            formData.append("file",file[0])
+            formData.append("file", file[0])
 
             const config = {
-                url:'/test/upload',
-                method:'post',
+                url: '/test/upload',
+                method: 'post',
                 formData
             }
             axiosRequest(config).then(res => {
-                console.log('====',res)
+                console.log('====', res)
                 resolve(res)
                 // resolve([{ res.data.url, alt }])
             }).catch(err => {
                 reject('')
-                console.error('this is a error',err)
+                console.error('this is a error', err)
             })
         })
     }
 
-    render(){
+    render() {
         return (
             <Editor
                 // 语言
@@ -61,8 +61,8 @@ class ByteMd extends React.Component<any,StateType>{
                 // 内部的值
                 value={this.state.value}
                 plugins={plugins}
-                onChange={(v:string) => {
-                    this.setState(Object.assign({},this.state,{value:v}))
+                onChange={(v: string) => {
+                    this.setState(Object.assign({}, this.state, {value: v}))
                 }}
                 uploadImages={this.uploadImg}
             />

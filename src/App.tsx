@@ -5,6 +5,7 @@ import Header from "@/pages/Header";
 import Home from "@/pages/Home";
 import Footer from "@/pages/Footer"
 import ByteMd from "@/pages/ByteMd"
+import Login from "@/pages/Login"
 
 class App extends Component{
     render(){
@@ -15,6 +16,7 @@ class App extends Component{
                         <Header/>
                         <Routes>
                             <Route path='/' element={<ByteMd/>}/>
+                            <Route path='/login' element={<Login/>}/>
                         </Routes>
                         <Footer/>
                     </div>
